@@ -20,19 +20,15 @@ document.addEventListener("DOMContentLoaded", () => {
                 name: expenseName,
                 amount: expenseAmount
             }
-
             expenses.push(newexpense);
             saveExpenseToLocal();
-
             // clear input
             expenseNameInput.value = "";
             expenseAmountInput.value = "";
         }
     })
 
-    function renderExpense(expenses) {
-
-    }
+    function renderExpense(expenses) { }
 
     function calculateTotal() {
         var total = 0;
