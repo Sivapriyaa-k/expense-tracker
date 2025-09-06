@@ -43,4 +43,7 @@ document.addEventListener("DOMContentLoaded", () => {
         return total;
     }
 
+    function saveExpenseToLocal() {
+        localStorage.setItem("Expenses", JSON.stringify(expenses))
+    }
 })
