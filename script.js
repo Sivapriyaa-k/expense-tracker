@@ -8,6 +8,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
     let expenses = JSON.parse(localStorage.getItem("Expenses")) || [];
     let totalAmount = calculateTotal();
+
+    if (totalAmount > 0) {
+        updateTotal();
+        renderExpense();
+    }
     console.log(expenses);
     expenseForm.addEventListener("submit", (e) => {
         e.preventDefault();
@@ -30,7 +35,13 @@ document.addEventListener("DOMContentLoaded", () => {
     })
 
     function renderExpense(expenses) {
-        document.createElement = "div";
+
+        expenseList.innerHTML = "";
+        expenses.forEach(expense => {
+            const li = document.createElement("li")
+            li.innerHTML = `${expense.name} - $${expense.amount}
+            <button data-id=${expense.id}>Delete</button>`
+        });
 
     }
 
