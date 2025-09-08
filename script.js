@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     let expenses = JSON.parse(localStorage.getItem("Expenses")) || [];
     let totalAmount = calculateTotal();
-    console.log(totalAmount);
+    console.log(expenses);
     expenseForm.addEventListener("submit", (e) => {
         e.preventDefault();
         var expenseName = expenseNameInput.value.trim();
@@ -28,7 +28,10 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     })
 
-    function renderExpense(expenses) { }
+    function renderExpense(expenses) {
+        document.createElement = "div";
+        
+     }
 
     function calculateTotal() {
         var total = 0;
