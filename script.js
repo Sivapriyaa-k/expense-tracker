@@ -68,6 +68,8 @@ document.addEventListener("DOMContentLoaded", () => {
             const id = parseInt(e.target.getAttribute('data-id'));
             expenses = expenses.filter((expense) => expense.id !== id);
             saveExpenseToLocal();
+            renderExpense();
+            updateTotal();
         }
     })
 })
