@@ -28,19 +28,21 @@ document.addEventListener("DOMContentLoaded", () => {
             expenses.push(newexpense);
             saveExpenseToLocal();
             updateTotal();
+            renderExpense();
             // clear input
             expenseNameInput.value = "";
             expenseAmountInput.value = "";
         }
     })
 
-    function renderExpense(expenses) {
+    function renderExpense() {
 
         expenseList.innerHTML = "";
         expenses.forEach(expense => {
             const li = document.createElement("li")
             li.innerHTML = `${expense.name} - $${expense.amount}
             <button data-id=${expense.id}>Delete</button>`
+            expenseList.appendChild(li)
         });
 
     }

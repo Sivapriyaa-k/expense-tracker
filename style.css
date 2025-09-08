@@ -65,3 +65,12 @@ input {
   margin-right: 5px;
   color: #fff;
 }
+
+#expense-list {
+  padding: 0px;
+}
+#expense-list li {
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+}
