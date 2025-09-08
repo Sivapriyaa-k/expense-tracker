@@ -65,7 +65,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
     expenseList.addEventListener("click", (e) => {
         if (e.target.tagName === "BUTTON") {
-
+            const id = parseInt(e.target.getAttribute('data-id'));
+            expenses = expenses.filter((expense) => expense.id !== id);
+            saveExpenseToLocal();
         }
     })
 })
