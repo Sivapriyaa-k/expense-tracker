@@ -73,4 +73,9 @@ input {
   list-style: none;
   display: flex;
   justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+#expense-list li button {
+  background-color: red;
 }

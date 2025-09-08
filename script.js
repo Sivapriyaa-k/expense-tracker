@@ -60,4 +60,12 @@ document.addEventListener("DOMContentLoaded", () => {
         totalAmount = calculateTotal();
         priceSpan.textContent = totalAmount.toFixed(2);
     }
+
+    // delete
+
+    expenseList.addEventListener("click", (e) => {
+        if (e.target.tagName === "BUTTON") {
+
+        }
+    })
 })
