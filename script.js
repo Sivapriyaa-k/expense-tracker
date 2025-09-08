@@ -22,6 +22,7 @@ document.addEventListener("DOMContentLoaded", () => {
             }
             expenses.push(newexpense);
             saveExpenseToLocal();
+            updateTotal();
             // clear input
             expenseNameInput.value = "";
             expenseAmountInput.value = "";
@@ -30,19 +31,20 @@ document.addEventListener("DOMContentLoaded", () => {
 
     function renderExpense(expenses) {
         document.createElement = "div";
-        
-     }
+
+    }
 
     function calculateTotal() {
-        var total = 0;
-        expenses.forEach(expense => {
-            total += expense.amount;
-        });
-        console.log(total)
-        return total;
+
+        return expenses.reduce((sum, expense) => sum + expense.amount, 0);
     }
 
     function saveExpenseToLocal() {
         localStorage.setItem("Expenses", JSON.stringify(expenses))
+    }
+
+    function updateTotal() {
+        totalAmount = calculateTotal();
+        priceSpan.textContent = totalAmount.toFixed(2);
     }
 })
